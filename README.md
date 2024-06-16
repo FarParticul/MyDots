@@ -5,13 +5,8 @@
 * [BSPWM Gruvbox](https://github.com/FarParticul/MyDots/tree/main/BSPWM/Gruvbox-9021)
 * [Plasma 6 Nord](https://github.com/FarParticul/MyDots/tree/main/KDE/Nord-9028)
 
-## 💻 How to install (BSPWM)
+## 💻 How to install
 - Clone repo
 - Copy catalogs in .config [cp -r -v * ~/.config/]
 - Make make them executable [chmod +x file]
-- Enjoy!
-
-### Plasma 6
-- The same in BSPWM ⬆️
-- Rename catalogs and remove non needed
 - Enjoy!
