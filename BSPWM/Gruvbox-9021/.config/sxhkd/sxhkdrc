@@ -1,0 +1,90 @@
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ 
+# ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗
+# ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║
+# ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║
+# ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝
+# ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ 
+#
+#	| Shkd config                                        
+#	| Made in prolinux410
+#	| Modified by Far
+#
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+#Rofi 
+alt + space
+        rofi -show drun -config ~/.config/rofi/rofi.rasi
+
+#Trash clean
+alt + z
+	bash ~/.config/dunst/trash.sh
+	
+#Restart sxhkd config
+super + e
+        pkill -USR1 -x sxhkd
+
+#Logout/restart BSPWM
+super + shift + {q,r}
+        bspc {quit,wm -r}
+
+#Restart
+super + ctrl + r
+        reboot
+
+#Off machine
+super + ctrl + p
+        poweroff
+
+#Screenshot
+@Print
+	flameshot gui
+
+#change the window status(поменять статус окна)
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+	bspc node -g {marked,locked,sticky,private}
+
+#select the direction in which the new window will open(выбрать направление в котором откроется новое окно)
+super + alt + {Left,Down,Up,Right}
+	bspc node -p {west,south,north,east}
+
+#cancel the direction in which the new window will open(отменить направление в котором откроется новое окно)
+super + alt + space
+	bspc node -p cancel
+
+#switch to the workspace or drag the active window to it(переключится на воркспейс или перетащить на него активное окно)
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+#Changing workspace(смена воркспейса)
+super + ctrl + {n,m}
+	bspc desktop -f {prev,next}.local
+
+#to close the window or kill it(закрыть окно или убить его)
+super + {_, shift + }c
+	bspc node -{c}
+
+#moving tiling windows(перемещение тайлинговых окон)
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+#tiling window resizing(ресайз тайлинговых окон)
+super + ctrl + {Left,Down,Up,Right}
+	{bspc node -z left -20 0; bspc node -z right -20 0, \
+	bspc node -z bottom 0 20; bspc node -z top 0 20, \
+	bspc node -z bottom 0 -20; bspc node -z top 0 -20, \ 
+	bspc node -z left 20 0; bspc node -z right 20 0}
+
+#floating window resizing(ресайз плавающих окон)
+alt + ctrl + {Left,Down,Up,Right}
+	{bspc node -z right -20 20, \
+	bspc node -z bottom 20 20, \
+	bspc node -z bottom 20 -20, \
+	bspc node -z right 20 20}
+
+#Moving floating windows(Перемещение плавающих окон)
+ctrl + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+

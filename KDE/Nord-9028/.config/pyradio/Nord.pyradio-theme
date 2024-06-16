@@ -1,0 +1,14 @@
+#Моё переделанное оформление base-16
+#Автор гандон и сделал уебанскую палитру, теперь она лучше!
+
+Stations            #E5E9F0 #2E3440
+Active Station      #81A1C1
+Status Bar          #2E3440 #8fbcbb
+Normal Cursor       #2E3440 #81A1C1
+Active Cursor       #2E3440 #8fbcbb
+Edit Cursor         #2E3440 #E5E9F0
+Extra Func          #81A1C1
+PyRadio URL         #E5E9F0
+Messages Border     #4C566A
+transparency        2
+

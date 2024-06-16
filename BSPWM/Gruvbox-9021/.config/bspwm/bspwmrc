@@ -1,0 +1,74 @@
+#!/bin/sh
+
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+#██████╗ ███████╗██████╗ ██╗    ██╗███╗   ███╗   
+#██╔══██╗██╔════╝██╔══██╗██║    ██║████╗ ████║    
+#██████╔╝███████╗██████╔╝██║ █╗ ██║██╔████╔██║   
+#██╔══██╗╚════██║██╔═══╝ ██║███╗██║██║╚██╔╝██║  
+#██████╔╝███████║██║     ╚███╔███╔╝██║ ╚═╝ ██║   
+#╚═════╝ ╚══════╝╚═╝      ╚══╝╚══╝ ╚═╝     ╚═╝  
+#
+#   |Config BSPWM
+#   |Pallete gruvbox
+#   |Created by Far Particular
+#
+#=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#Autostart
+pgrep -x sxhkd > /dev/null || sxhkd &
+dunst &
+xbindkeys &
+xsettingsd &
+numlockx &
+pgrep -x polybar > /dev/null || polybar example & 
+picom --config ~/.config/picom/picom.conf &
+feh --bg-scale ~/link/for/wallpaper &
+xsetroot -cursor_name left_ptr &
+
+#Window settings
+#1 Internet(Chromium)
+bspc rule -a Chromium state=floating follow=on focus=on desktop='^1'
+#2 Messages(Discord,Telegram)
+bspc rule -a TelegramDesktop state=floating follow=on focus=on desktop='^2'
+bspc rule -a discord state=floating follow=on focus=on desktop='^2'
+#3 Games(Steam, Supertux2)
+bspc rule -a PrismLauncher state=floating follow=on focus=on desktop='^3'
+bspc rule -a Steam state=floating follow=on focus=on desktop='^3'
+bspc rule -a supertux2 state=floating desktop='^3'
+bspc rule -a Minetest state=floating desktop='^3'
+bspc rule -a lutris state=floating desktop='^3'
+bspc rule -a steam state=floating follow-on focus=on desktop='^3'
+#4 creative/work(Krita, Libreoffice)
+bspc rule -a krita state=floating follow=on focus=on desktop='^4'
+bspc rule -a Libreoffice state=floating follow=on focus=on desktop='^4'
+#5 Console Utilities(Music, Videos, and Nemo(not fish))
+bspc rule -a Nemo state=floating follow=on focus=on desktop='^5'
+#Other
+bspc rule -a kitty state=floating follow=on focus=on #rectangle=
+
+
+#Number of tables
+bspc monitor -d 󰇧 󰭹    #с иконками
+#bspc monitor -d      #с точками
+#bspc monitor -d      #с бубликами
+
+#Indents
+bspc config border_width 1
+bspc config window_gap   9
+
+#Frame colors
+bspc config normal_border_color "#504945"
+bspc config active_border_color "#7C6F64"
+bspc config focused_border_color "#928374"
+bspc config presel_feedback_color "#3C3836"
+
+#Cursor window focus
+bspc config focus_follows_pointer true
+bspc config pointer_modifier	  super
+
+#coefficient
+bspc config split_ratio 0.52
+
+#Indents and borders when the window is open
+bspc config borderless_monocle 	true
+bspc config gapless_monocle		true
