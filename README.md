@@ -17,7 +17,15 @@ My repository has a gpl license version 3.0, so you can fork my repo and modify 
 ## 🖥 Soft
 
 KDE(Arch)
-```doas pacman -S firefox kitty blender telegram-desktop discord fish micro opendoas transmission krita steam```
+--
+```doas pacman -S firefox kitty blender telegram-desktop discord fish micro opendoas transmission krita steam figlet```
+
+```yay pyradio cava ufetch```
 
 BSPWM(Artix)
+--
 ```doas pacman -S firefox kitty telegram-desktop steam fish opendoas neovim krita bpsmwm rofi polybar sxhkd feh picom numlockx xorg-server xorg-xinit xorg-xrandr lxapperance nemo libreoffice lutris```
+
+```yay pyradio cava prismlauncher github-desktop```
+
+
